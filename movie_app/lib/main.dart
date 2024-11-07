@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:async';
-import '../screens/movie_search_screen.dart';
+import '../screens/movie_screen.dart';
 import 'package:provider/provider.dart';
 import 'providers/movie_provider.dart';
 

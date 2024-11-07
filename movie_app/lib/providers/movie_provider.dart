@@ -15,8 +15,6 @@ class MovieProvider extends ChangeNotifier {
       _isLoading = true;
       notifyListeners();
       _movies = await MovieService.fetchPopularMovies();
-
-
       _isLoading = false;
       _errorMessage = null;
       notifyListeners();

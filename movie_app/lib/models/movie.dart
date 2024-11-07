@@ -1,27 +1,10 @@
-class Genre {
-  final int id;
-  final String name;
-
-  Genre({
-    required this.id,
-    required this.name,
-  });
-
-  factory Genre.fromJson(Map<String, dynamic> json) {
-    return Genre(
-      id: json['id'],
-      name: json['name'],
-    );
-  }
-}
-
 class Movie {
   final int id;
   final String title;
   final String overview;
   final String posterPath;
   final double voteAverage;
-  final List<Genre> genres;
+
 
   Movie({
     required this.id,
@@ -29,7 +12,6 @@ class Movie {
     required this.overview,
     required this.posterPath,
     required this.voteAverage,
-    required this.genres,
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) {
@@ -39,9 +21,6 @@ class Movie {
       overview: json['overview'],
       posterPath: json['poster_path'] ?? '',
       voteAverage: json['vote_average']?.toDouble() ?? 0.0,
-      genres: (json['genres'] as List<dynamic>?)
-          ?.map((genreJson) => Genre.fromJson(genreJson))
-          .toList() ?? [],
     );
 
   }
